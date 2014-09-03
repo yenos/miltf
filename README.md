@@ -15,8 +15,10 @@ Some possible issues/improvments:
 - MTGX Extraction: is read as text file because lazy, parse it as XML would be cleaner and faster
 - Module: filer script's methods can be combined in one
 
+And please not I'm not a developper :) Enjoy!
+
 =====
-# How is it structurate?
+# How is it structure?
 MILTF is composed of one entry script (miltf.py) et four folders:
 - module: scripts to extract data, manipulate data, wrap the outputs
 - output: where are stored output files (option -o/--output txt)
