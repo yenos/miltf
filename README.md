@@ -56,8 +56,78 @@ Their are four special options:
 # Help
 python3 miltf.py -h
 
+=====
+# Configuration
+In store/miltf.cfg: 
+- IOC_FOLDER_PATH: the folder from which you want the IOC file search start (eg: =/home/user/work/IOC)
+- MTGX_FOLDER_PATH: the folder from which you want the MTGX file search start (eg: =/home/user/work/Casefile)
+WHITELIST_PATH: the file containing domains and IPv4 you want to be exclude from result (default: =./ressource/top-1000.lst)
+- CACHE_IN: (des)activation of the cache-in at start (default: =False)
+- CACHE_OUT: (des)activation of the cache-out at start (default: =False)
+- WHITELIST: (des)activation of the whitelisting at start (default: =False)
+- THREAT_RECON_API: just an example of an API use. (=[YOUR THREATRECON API KEY])
+- API_ACTIVE(des)activation of the API check of results (default: =False)
 
 
 =====
 # Use Case Example
+
+## Search Domain name and print the result
+python3 miltf.py -d cnndaily.com -o term
+
+## Search Domain name and save the output in a file
+python3 miltf.py -d cnndaily.com -o txt
+
+## Search IP and save the output in a file
+python3 miltf.py -i 67.229.65.125  -o txt
+
+## Search all IOC in the Working Base and save the result in a file
+python3 miltf.py -a ioc -o txt
+
+To get all:
+- ioc: -a ioc
+- mtgx: -a mtgx
+- ip: -a ipv4
+- domains: -a dom
+
+## Check an IOC
+python3 miltf.py -o term --check-ioc  /path/to/ioc/to/check
+
+## Compare an IOC
+python3 miltf.py -o term --comp-ioc  /path/to/ioc/to/check
+
+## Check a MTGX
+python3 miltf.py -o term --check-mtgx  /path/to/mtgx/to/check
+
+## Compare a MTGX
+python3 miltf.py -o term --comp-mtgx  /path/to/mtgx/to/check
+
+## Check or Compare a TXT file
+MILTF can check or compare a TXT file, build with one IP/domains per line
+args:
+- --check-txt
+- --comp-txt
+ 
+## Compare two files
+The path of both file have to be put after --comp-twix, separed by a double equal sign '=='. Order does not matter and files can be MTGX, TXT or IOC.
+
+miltf.py -o term --comp-twix /path/to/mtgx1==/path/to/ioc8
+
+## Activate API with command line
+Whitelisting is set to False by default but you can change it in the store/miltf.cfg to True.
+For one shot, use the -e/--exclude arg
+eg:
+python3 miltf.py -o term -d yahoo.com
+python3 miltf.py -o term -d yahoo.com -e
+
+## Save the Working Base
+Just put -ci/--cache_in in your command. MILTF will then load elements from the store/wb.csv file instead of searching files, extract elements and format it.
+By design, if you use whitelisting, cache-in is done once the whitelisting operation done.
+If you upload of add new IOC/MTGX files, then don't forget to update the CSV cache file.
+This operation take about the double of time compared to a regular load
+
+## Load the Working Base Image
+Just put -co/--cache_out in your command. MILTF will then load elements from the store/wb.csv file instead of searching files, extract elements and format it.
+If their has been previously no cache-in, or if the store/wb.csv file has been deleted, it will return an error at start.
+Loading information this way can take >10 time less time than the regular load.
 
