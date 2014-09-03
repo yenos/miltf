@@ -55,76 +55,7 @@ Their are four special options:
 =====
 # Help
 python3 miltf.py -h
-usage: miltf.py [-h] [-a ALL_FLAG] [-d SEARCH_DOM] [-i SEARCH_IP4]
-                [--check-ioc CHECK_IOC] [--check-mtgx CHECK_MTGX]
-                [--check-txt CHECK_TXT] [--comp-ioc COMP_IOC]
-                [--comp-mtgx COMP_MTGX] [--comp-txt COMP_TXT]
-                [--comp-twix COMP_TWIX] [-o OUTPUT_TYPE] [--api] [-e] [-ci]
-                [-co]
 
-Mtgx&Ioc Load&Transform for netForensic (MILTF) aim to extract network
-information from mtgx (Paterva Maltego/Casefile) and IOC files.
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -a ALL_FLAG, --all-flag ALL_FLAG
-                        Return all the element of the working base regarding
-                        one of the following tag: IP4, DOM, IOC, MTGX (not
-                        case sensitive, default=all)
-  -d SEARCH_DOM, --search-dom SEARCH_DOM
-                        Search a domain in the working base and return the
-                        matched string, the type of source file (IOC/MTGX) and
-                        the source file PATH
-  -i SEARCH_IP4, --search-ip4 SEARCH_IP4
-                        Search an IPv4 adress in the working base and return
-                        the matched string, the type of source file (IOC/MTGX)
-                        and the source file PATH
-  --check-ioc CHECK_IOC
-                        Extract IP and domain of a given IOC file, search the
-                        elemnts in the working base and return the matched
-                        string, the type of source file (IOC/MTGX) and the
-                        source file PATH
-  --check-mtgx CHECK_MTGX
-                        Extract IP and domain of a given Mtgx file, search the
-                        elemnts in the working base and return the matched
-                        string, the type of source file (IOC/MTGX) and the
-                        source file PATH
-  --check-txt CHECK_TXT
-                        Extract the string at each line of the given TXT file,
-                        search the elemnts in the working base and return the
-                        matched string, the type of source file (IOC/MTGX) and
-                        the source file PATH
-  --comp-ioc COMP_IOC   Extract IP and Domain of a given IOC File, search the
-                        element in the working base and return the number of
-                        element that matched at least one, with a numeric
-                        indicator.
-  --comp-mtgx COMP_MTGX
-                        Extract IP and Domain of a given Mtgx File, search the
-                        element in the working base and return the number of
-                        element that matched at least one, with a numeric
-                        indicator.
-  --comp-txt COMP_TXT   Extract the string at each line of the given TXT file,
-                        search the element in the working base and return the
-                        number of element that matched at least one, with a
-                        numeric indicator.
-  --comp-twix COMP_TWIX
-                        Extract IP and domains of two given files (IOC or
-                        MTGX) and return elements that matched at least one.
-                        Filenames has to be separate with a '=='
-  -o OUTPUT_TYPE, --output-type OUTPUT_TYPE
-                        Defining output method: create a txt file (txt),
-                        return a variable (var) or print in the terminal
-                        (term). Default = var. Don't hesitate to redirect the
-                        'term' output into a file
-  --api                 Activate the Threat Recon API checking
-  -e, --exclude         Load domains and IPs from the given txt file (one per
-                        line) and exclude this elements from MILTF working
-                        base. BUG: some domains are exclude for an unknow
-                        reason, without beeing listed in the whitelist. Still
-                        investigated this issue.
-  -ci, --cache-in       Save the actual working base into a csv file
-  -co, --cache_out      Load data from the -ci argument's csv output to feed
-                        the working base, instead of crawling the filesystem.
 
 
 =====
