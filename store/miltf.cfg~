@@ -1,8 +1,0 @@
-IOC_FOLDER_PATH=/home/rmo/work/aaaDetectionRules/rules/IOC
-MTGX_FOLDER_PATH=/home/rmo/work/CybInt
-WHITELIST_PATH=./ressource/top-1000.lst
-CACHE_IN=False
-CACHE_OUT=False
-WHITELIST=False
-THREAT_RECON_API=e8e9694c1fa7d7666a0f16105e9651f5
-API_ACTIVE= False
