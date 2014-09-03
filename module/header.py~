@@ -1,0 +1,4 @@
+def header():
+    for line in open("../ressource/header.ascii"):
+        print(line)
+    print("\n")
