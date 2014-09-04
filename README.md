@@ -15,7 +15,7 @@ Some possible issues/improvments:
 - MTGX Extraction: is read as text file because lazy, parse it as XML would be cleaner and faster
 - Module: filer script's methods can be combined in one
 
-And please not I'm not a developper :) Enjoy!
+And please, I'm not a developper :) Enjoy!
 
 =====
 # How is it structure?
@@ -63,7 +63,7 @@ python3 miltf.py -h
 In store/miltf.cfg: 
 - IOC_FOLDER_PATH: the folder from which you want the IOC file search start (eg: =/home/user/work/IOC)
 - MTGX_FOLDER_PATH: the folder from which you want the MTGX file search start (eg: =/home/user/work/Casefile)
-WHITELIST_PATH: the file containing domains and IPv4 you want to be exclude from result (default: =./ressource/top-1000.lst)
+- WHITELIST_PATH: the file containing domains and IPv4 you want to be exclude from result (default: =./ressource/top-1000.lst)
 - CACHE_IN: (des)activation of the cache-in at start (default: =False)
 - CACHE_OUT: (des)activation of the cache-out at start (default: =False)
 - WHITELIST: (des)activation of the whitelisting at start (default: =False)
@@ -119,8 +119,8 @@ miltf.py -o term --comp-twix /path/to/mtgx1==/path/to/ioc8
 Whitelisting is set to False by default but you can change it in the store/miltf.cfg to True.
 For one shot, use the -e/--exclude arg
 eg:
-python3 miltf.py -o term -d yahoo.com
-python3 miltf.py -o term -d yahoo.com -e
+- python3 miltf.py -o term -d yahoo.com
+- python3 miltf.py -o term -d yahoo.com -e
 
 ## Save the Working Base
 Just put -ci/--cache_in in your command. MILTF will then load elements from the store/wb.csv file instead of searching files, extract elements and format it.
